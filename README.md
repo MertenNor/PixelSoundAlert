@@ -2,6 +2,17 @@
 
 A desktop application that monitors specific screen pixels and plays sounds when their colors change from a baseline. Perfect for gaming alerts, automation, or any scenario where you need audio notifications based on visual changes.
 
+
+## How It Works
+
+1. The application continuously monitors specified screen pixels at a high frequency (50ms intervals)
+2. It compares the current pixel color with the stored baseline color
+3. When the color difference exceeds the threshold, it triggers the sound
+4. If conditional logic is enabled, it also checks that Pixel B matches the condition color
+5. The sound plays once per color change event (won't repeat until color returns to baseline)
+
+
+
 ## Features
 
 - **Multi-Area Monitoring**: Monitor multiple screen pixels simultaneously
@@ -122,24 +133,12 @@ PixelSoundAlert/
 └── PixelSoundAlert.spec   # PyInstaller configuration
 ```
 
-## How It Works
-
-1. The application continuously monitors specified screen pixels at a high frequency (50ms intervals)
-2. It compares the current pixel color with the stored baseline color
-3. When the color difference exceeds the threshold, it triggers the sound
-4. If conditional logic is enabled, it also checks that Pixel B matches the condition color
-5. The sound plays once per color change event (won't repeat until color returns to baseline)
-
 ## Troubleshooting
 
 - **Sound not playing**: Ensure the sound file path is valid and the file format is supported (WAV/MP3)
 - **Color not detected**: Try adjusting the threshold value - lower values are more sensitive
 - **Application not responding**: Check that all required fields are filled (coordinates, baseline, sound file)
 - **Build errors**: Ensure PyInstaller is installed: `pip install pyinstaller`
-
-## License
-
-[Add your license here]
 
 ## Contributing
 
